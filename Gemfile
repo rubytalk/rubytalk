@@ -9,6 +9,10 @@ gem 'jquery-rails'
 gem 'haml-rails'
 gem 'rest-client'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'dotenv-rails'
   gem 'pry'
