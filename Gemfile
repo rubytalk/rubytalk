@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'haml-rails'
 
 group :development, :test do
+  gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   # Access an IRB console on exception pages or by using <%= console %> in views
