@@ -1,0 +1,25 @@
+%h1 New Member
+
+= form_for(@member) do |f|
+  - if @member.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@member.errors.count, "error")
+        prohibited this member from being saved:
+
+      %ul
+        - @member.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+
+  .field
+    = f.label :email
+    = f.text_field :email
+
+  .actions
+    = f.submit
+
+= link_to 'Back', members_path
