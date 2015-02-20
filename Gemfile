@@ -8,6 +8,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'rest-client'
+gem 'unicorn'
 
 group :production do
   gem 'rails_12factor'
