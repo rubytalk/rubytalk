@@ -1,0 +1,10 @@
+pt-BR:
+  errors:
+    messages:
+      blank: não pode ficar em branco
+      taken: já está em uso
+  activerecord:
+    attributes:
+      member:
+        email: E-mail
+        name: Nome
