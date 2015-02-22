@@ -1,10 +1,26 @@
 !!! 5
 %html
   %head
-    %title RubyTalk
+    %title Ruby Talk - Chat da comunidade Ruby e Rails
+    %meta(name="viewport" content="width=device-width, initial-scale=1")
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
   %body
+    %header.hero
+      %div.wrapper
+        = image_tag "logo-white.svg", class: 'logo', alt: "Ruby Talk Logo"
+        %h1.title Ruby Talk
+        %p.subtitle Chat da comunidade Ruby e Rails
+
     = yield
+
+    %footer.site-footer
+      %div.wrapper
+        %p
+          Uma iniciativa
+          %a(href="http://standardcode.com.br" target="_blank") Standard Code
+          e&nbsp;
+          %a(href="http://current.com.br" target="_blank")> Current
+          \.

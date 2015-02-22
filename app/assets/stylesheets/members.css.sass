@@ -1,0 +1,153 @@
+// Variables
+
+$black: #000
+$dark: #222
+$gray: #aaa
+$light: #ddd
+$white: #fff
+$red: #b02b2c
+$yellow: #f8e71c
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic)
+$font: Roboto, sans-serif
+
+$buffer: 20px
+
+
+// Base
+
+body
+  background-color: $white
+  color: $dark
+  margin: 0
+
+body,
+input,
+button,
+select,
+textarea
+  font-family: $font
+
+a
+  color: $red
+
+  &:focus
+    outline: 1px dotted
+
+
+// Wrapper
+
+.wrapper
+  margin: 0 auto
+  max-width: 500px
+  padding: 0 $buffer
+
+
+// Header
+
+.hero
+  background-color: $red
+  color: $white
+  padding: ($buffer * 2) 0
+  text-align: center
+
+  .title
+    font:
+      size: 3em
+      weight: 500
+    margin: .5em 0 .2em
+
+  .subtitle
+    font:
+      size: 1.4em
+      weight: 400
+    margin: 0
+
+
+// Content
+
+.content
+  padding: ($buffer * 2) 0
+
+
+// Signup Form
+
+.signup-form
+  border: 1px solid $gray
+  border-radius: 4px
+  box-shadow: 0 1px 2px $light
+  margin: ($buffer * 2) 0
+  padding: $buffer
+
+  fieldset
+    border: none
+    margin: 0
+    padding: 0
+
+  label
+    font:
+      size: .9em
+      weight: 500
+
+  input[type="text"],
+  input[type="email"]
+    border: 1px solid $gray
+    border-radius: 4px
+    box:
+      shadow: inset 0 2px 2px $light
+      sizing: border-box
+    font-size: 1.2em
+    margin: .5em 0 1em
+    outline: none
+    padding: .5em
+    width: 100%
+
+    &:focus
+      border-color: $red
+
+  input[type="submit"]
+    background-color: $red
+    border: none
+    border-radius: 4px
+    box-sizing: border-box
+    color: $white
+    cursor: pointer
+    font-size: 1.2em
+    outline: none
+    padding: .5em
+    width: 100%
+
+    &:hover,
+    &:focus
+      background-color: scale-color($red, $lightness: 20%)
+
+    &:active
+      background-color: scale-color($red, $lightness: -10%)
+      box-shadow: inset 0 4px 4px rgba($black, .3)
+
+
+// Validation Error
+
+.validation-error
+  background-color: $yellow
+  border-radius: 4px
+  padding: .5em 1em
+  margin: 0 0 1em
+
+
+// Member Section
+
+.member-section
+  text-align: center
+
+
+// Footer
+
+.site-footer
+  border-top: 1px solid $light
+  color: $gray
+  font-size: .9em
+  text-align: center
+
+  a
+    color: $gray

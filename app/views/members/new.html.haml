@@ -1,25 +1,35 @@
-%h1 New Member
-
-= form_for(@member) do |f|
-  - if @member.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@member.errors.count, "error")
-        prohibited this member from being saved:
-
-      %ul
-        - @member.errors.full_messages.each do |message|
-          %li= message
-
-  .field
-    = f.label :name
-    = f.text_field :name
-
-  .field
-    = f.label :email
-    = f.text_field :email
-
-  .actions
-    = f.submit
-
-= link_to 'Back', members_path
+%section.content
+  %div.wrapper
+    %p
+      O
+      %strong Ruby Talk
+      é um chat para desenvolvedores
+      %strong Ruby
+      e
+      %strong Rails
+      poderem trocar idéias, se ajudar, anunciar jobs e divulgar projetos.
+    %p
+      Ao se inscrever, você será convidado para nossa sala no&nbsp;
+      %a(href="http://slack.com" target="_blank")> Slack
+      \.
+    = form_for @member, html: { class: 'signup-form' } do |f|
+      - if @member.errors.any?
+        %p.validation-error
+          - @member.errors.full_messages.each do |message|
+            = message
+            %br
+      %fieldset
+        %div
+          = f.label :name
+          %br
+          = f.text_field :name
+        %div
+          = f.label :email
+          %label
+          %br
+          = f.email_field :email
+      %fieldset
+        %input(type="submit" value="Quero Participar")
+    %p.member-section
+      Já faz parte?
+      %a(href="https://rubytalk.slack.com/" target="_blank") Acesse o Chat
