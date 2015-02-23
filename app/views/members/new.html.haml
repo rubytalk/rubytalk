@@ -1,38 +1,36 @@
-%section.content
-  %div.wrapper
-    %p
-      O
-      %strong Ruby Talk
-      é um chat para desenvolvedores
-      %strong Ruby
-      e
-      %strong Rails
-      poderem trocar idéias, se ajudar, anunciar jobs e divulgar projetos.
-    %p
-      Ao se inscrever, você será convidado para nossa sala no&nbsp;
-      %a(href="http://slack.com" target="_blank")> Slack
-      \.
+%div.wrapper
+  %p
+    O
+    %strong Ruby Talk
+    é um chat para desenvolvedores
+    %strong Ruby
+    e
+    %strong Rails
+    poderem trocar idéias, se ajudar, anunciar jobs e divulgar projetos.
+  %p
+    Ao se inscrever, você será convidado para nossa sala no&nbsp;
+    %a(href="http://slack.com" target="_blank")> Slack
+    \.
 
-    %p.signup-form-success= notice
+  %p.signup-form-success= notice
 
-    = form_for @member, html: { class: 'signup-form' } do |f|
-      - if @member.errors.any?
-        %p.validation-error
-          - @member.errors.full_messages.each do |message|
-            = message
-            %br
-      %fieldset
-        %div
-          = f.label :name
-          %br
-          = f.text_field :name, required: true
-        %div
-          = f.label :email
-          %label
-          %br
-          = f.email_field :email, required: true
-      %fieldset
-        %input(type="submit" value="Quero Participar")
-    %p.member-section
-      Já faz parte?
-      %a(href="https://rubytalk.slack.com/" target="_blank") Acesse o Chat
+  = form_for @member, html: { class: 'signup-form' } do |f|
+    - if @member.errors.any?
+      %ul.validation-error
+        - @member.errors.full_messages.each do |message|
+          %li= message
+    %fieldset
+      %div
+        = f.label :name
+        %br
+        = f.text_field :name
+      %div
+        = f.label :email
+        %label
+        %br
+        = f.email_field :email
+    %fieldset
+      %input(type="submit" value="Quero Participar")
+  %p.member-section
+    Já faz parte?
+    %a(href="https://rubytalk.slack.com/" target="_blank") Acesse o Chat
