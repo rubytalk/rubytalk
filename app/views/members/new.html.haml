@@ -12,23 +12,26 @@
     %a(href="http://slack.com" target="_blank")> Slack
     \.
 
-  %p.signup-form-success= notice
-
   = form_for @member, html: { class: 'signup-form' } do |f|
+
     - if @member.errors.any?
       %ul.validation-error
         - @member.errors.full_messages.each do |message|
           %li= message
+
+    - if notice
+      %p.signup-form-success= notice
+
     %fieldset
       %div
         = f.label :name
         %br
-        = f.text_field :name
+        = f.text_field :name, required: true
       %div
         = f.label :email
         %label
         %br
-        = f.email_field :email
+        = f.email_field :email, required: true
     %fieldset
       %input(type="submit" value="Quero Participar")
   %p.member-section

@@ -9,7 +9,7 @@ class MembersController < ApplicationController
 
     if @member.save
       invite_to_slack
-      redirect_to new_member_url, notice: "Em breve você receberá um e-mail de convite para o chat"
+      redirect_to new_member_url, notice: "Obrigado! Você receberá um e-mail de convite para o chat."
     else
       render :new
     end
