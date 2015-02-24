@@ -1,7 +1,7 @@
 class Member < ActiveRecord::Base
   ENDPOINT = "https://#{ENV['CHAT']}.slack.com/api/users.admin.invite"
 
-  has_many :failed_invitations
+  has_many :failed_invitations, dependent: :destroy
 
   validates :email, uniqueness: true, presence: true
   validates_presence_of :name
