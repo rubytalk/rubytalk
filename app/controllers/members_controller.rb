@@ -23,8 +23,7 @@ class MembersController < ApplicationController
     if member.invite
       { notice: "Obrigado! Você receberá um e-mail de convite para o chat." }
     else
-      { alert: "Houve um erro ao tentar \
-        convida-lo para o chat! Estamos investigando" }
+      { alert: "Algo deu errado ao te convidar pro chat, mas pode deixar que vamos consertar e te avisar o quanto antes." }
     end
   end
 end
