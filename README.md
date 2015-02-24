@@ -2,4 +2,4 @@
 
 O **Ruby Talk** é um chat para desenvolvedores **Ruby** e **Rails** poderem trocar idéias, se ajudar, anunciar jobs e divulgar projetos.
 
-Esta app faz integração com a API do Slack para convidar pro chat quem se inscrever pelo formulário na página.
+Esta app faz integração com a API do [Slack](http://slack.com) para convidar pro chat quem se inscrever pelo formulário na página.
