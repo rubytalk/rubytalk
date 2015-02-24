@@ -1,4 +1,6 @@
 class Member < ActiveRecord::Base
+  ENDPOINT = "https://#{ENV['CHAT']}.slack.com/api/users.admin.invite"
+
   has_many :failed_invitations
 
   validates :email, uniqueness: true, presence: true
@@ -14,9 +16,8 @@ class Member < ActiveRecord::Base
     api_call = JSON[
       RestClient.post(ENDPOINT,
         't'           => Time.now.to_i,
-        'channels'    => ENV['CHANNELS'],
-        'email'       => @member.email,
-        'first_name'  => @member.name,
+        'email'       => email,
+        'first_name'  => name,
         'token'       => ENV['API'],
         'set_active'  => true,
         '_attempts'   => 1
