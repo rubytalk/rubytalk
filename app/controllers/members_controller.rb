@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  ENDPOINT = "https://rubytalk.slack.com/api/users.admin.invite"
+  ENDPOINT = "https://#{ENV['CHAT']}.slack.com/api/users.admin.invite"
   def new
     @member = Member.new
   end
