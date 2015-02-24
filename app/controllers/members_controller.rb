@@ -1,5 +1,4 @@
 class MembersController < ApplicationController
-  ENDPOINT = "https://rubytalk.slack.com/api/users.admin.invite"
   def new
     @member = Member.new
   end
@@ -8,8 +7,7 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
 
     if @member.save
-      invite_to_slack
-      redirect_to new_member_url, notice: "Obrigado! Você receberá um e-mail de convite para o chat."
+      redirect_to new_member_url, user_message(@member)
     else
       render :new
     end
@@ -21,17 +19,11 @@ class MembersController < ApplicationController
     params.require(:member).permit(:name, :email)
   end
 
-  def invite_to_slack
-    # TODO: Find some way to emulate this in development
-    if Rails.env.production?
-      RestClient.post ENDPOINT,
-        't'           => Time.now.to_i,
-        'channels'    => ENV['CHANNELS'],
-        'email'       => @member.email,
-        'first_name'  => @member.name,
-        'token'       => ENV['API'],
-        'set_active'  => true,
-        '_attempts'   => 1
+  def user_message(member)
+    if member.invite
+      { notice: "Obrigado! Você receberá um e-mail de convite para o chat." }
+    else
+      { alert: "Algo deu errado ao te convidar pro chat, mas pode deixar que vamos consertar e te avisar o quanto antes." }
     end
   end
 end

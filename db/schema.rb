@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150220234217) do
+ActiveRecord::Schema.define(version: 20150224004101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "failed_invitations", force: :cascade do |t|
+    t.boolean  "solved",     default: false
+    t.text     "reason"
+    t.integer  "member_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "failed_invitations", ["member_id"], name: "index_failed_invitations_on_member_id", using: :btree
 
   create_table "members", force: :cascade do |t|
     t.string   "name",       null: false
@@ -25,4 +35,5 @@ ActiveRecord::Schema.define(version: 20150220234217) do
 
   add_index "members", ["email"], name: "index_members_on_email", unique: true, using: :btree
 
+  add_foreign_key "failed_invitations", "members"
 end
