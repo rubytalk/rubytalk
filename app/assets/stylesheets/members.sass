@@ -4,6 +4,7 @@ $black: #000
 $dark: #222
 $gray: #aaa
 $light: #ddd
+$off-white: #f6f6f6
 $white: #fff
 $red: #b02b2c
 $yellow: #f8e71c
@@ -169,6 +170,29 @@ a
 
 .field_with_errors
   display: inline
+
+
+// Statistics
+
+.stats
+  background-color: $off-white
+  border-radius: 4px
+  display: flex
+  margin-top: $buffer * 2
+  padding: $buffer 0
+
+  .entry
+    text-align: center
+    width: 50%
+
+    &:not(:last-child)
+      border-right: 1px solid $light
+
+  .number
+    display: block
+    font:
+      size: 2em
+      weight: 300
 
 
 // Media Queries
