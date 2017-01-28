@@ -13,3 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+  App = {}
+  App.env = $('[name="environment"]').attr('content')
+
+  $(document).on('click', '[data-toggle="track"]', function(e) {
+    var $el      = $(e.target)
+    var action   = $el.text()
+    var category = $(this).attr('data-category')
+
+    ga('send', 'event', category, action, App.env);
+  })
+})

@@ -1,0 +1,23 @@
+// Place all the styles related to the homepage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.homepage.index {
+    .wrapper {
+      max-width: 800px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 4em;
+      text-transform: uppercase;
+      text-align: center;
+      padding-top: 80px;
+      margin: 0;
+      color: #b02b2c;
+     text-shadow: 0px 2px 4px #a7a7a7;
+  }
+
+}

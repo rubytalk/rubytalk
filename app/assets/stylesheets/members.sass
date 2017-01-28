@@ -23,6 +23,14 @@ body
   color: $dark
   margin: 0
 
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+
+section.content
+  flex: 1
+
+
 body,
 input,
 button,
@@ -50,20 +58,48 @@ a
 .hero
   background-color: $red
   color: $white
-  padding: ($buffer * 2) 0
-  text-align: center
+  padding: ($buffer) 0
+  border-bottom: 1px solid #333
+  display: flex
+  justify-content: space-between
+  align-items: center
 
-  .title
-    font:
-      size: 3em
-      weight: 500
-    margin: .5em 0 .2em
-
-  .subtitle
-    font:
-      size: 1.4em
-      weight: 400
+  ul
+    display: flex
+    list-style-type: none
     margin: 0
+    padding: 0
+
+    li
+      &:first-child a
+        border: none
+
+    a
+      color: $white
+      padding: 0.2em 1em
+      border-left: 1px dashed darken($white, 10%)
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
+
+
+  & > a
+    padding-left: 1em
+    color: $white
+    text-decoration: none
+    display: flex
+    align-items: center
+    outline: none
+
+    .logo
+      width: 3.7em
+
+    .title
+      font:
+        size: 2em
+        weight: 500
+      margin: .5em 0.5em .2em
 
 
 // Content
