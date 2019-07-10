@@ -4,12 +4,17 @@ class MembersController < ApplicationController
   end
 
   def create
-    @member = Member.new(member_params)
-
-    if @member.save
-      redirect_to new_member_url, user_message(@member)
+    # isso é um honeypot para spammers
+    if params[:address].present?
+      redirect_to new_member_url, notice: 'Obrigado! Você receberá um e-mail em breve'
     else
-      render :new
+      @member = Member.new(member_params)
+
+      if @member.save
+        redirect_to new_member_url, user_message(@member)
+      else
+        render :new
+      end
     end
   end
 

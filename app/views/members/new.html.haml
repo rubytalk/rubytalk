@@ -27,6 +27,10 @@
       %p.signup-form-success= notice
 
     %fieldset
+      %div(style='display: none')
+        = label_tag :address
+        %br
+        = text_field_tag :address
       %div
         = f.label :name
         %br
