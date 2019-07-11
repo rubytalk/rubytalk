@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'haml-rails'
 gem 'rest-client'
 gem 'unicorn'
+gem 'recaptcha'
 
 group :production do
   gem 'rails_12factor'
