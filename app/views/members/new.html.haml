@@ -13,7 +13,6 @@
     \.
 
   = form_for @member, html: { class: 'signup-form' } do |f|
-
     - if alert
       %ul.validation-error
         %li= alert
@@ -36,6 +35,8 @@
         %label
         %br
         = f.email_field :email, required: true
+      %div.captcha-container
+        = recaptcha_tags
     %fieldset
       %input(type="submit" value="Quero Participar")
     %div.address

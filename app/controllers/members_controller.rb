@@ -10,7 +10,7 @@ class MembersController < ApplicationController
     else
       @member = Member.new(member_params)
 
-      if @member.save
+      if verify_recaptcha(model: @member, message: 'Verificação reCAPTCHA falhou, tente novamente.') && @member.save
         redirect_to new_member_url, user_message(@member)
       else
         render :new
