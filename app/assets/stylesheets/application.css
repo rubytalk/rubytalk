@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.address {
+  border: 1px solid;
+  background: #fff;
+  color: #fff;
+  opacity: 0;
+  height: 0;
+}

@@ -27,10 +27,6 @@
       %p.signup-form-success= notice
 
     %fieldset
-      %div(style='display: none')
-        = label_tag :address
-        %br
-        = text_field_tag :address
       %div
         = f.label :name
         %br
@@ -42,6 +38,10 @@
         = f.email_field :email, required: true
     %fieldset
       %input(type="submit" value="Quero Participar")
+    %div.address
+      = label_tag :address
+      %br
+      = text_field_tag :address
   %p.member-section
     Já faz parte?
     %a(href="https://rubytalk.slack.com/" target="_blank") Acesse o Chat
